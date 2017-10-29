@@ -1,0 +1,11 @@
+service: getReservation
+provider:
+  name: aws
+  runtime: python2.7
+
+functions:
+  cron:
+    handler: opentable.run
+    events:
+      # Invoke Lambda function every minute
+      - schedule: rate(5 minute)
